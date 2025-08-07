@@ -5,11 +5,13 @@ async function connectDB() {
   console.log("⏳ Trying to connect to MongoDB...");
 
   try {
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log("✅ MongoDB Atlas is connected");
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+    });
+    console.log(" MongoDB Atlas is connected");
   } catch (err) {
-    console.error("❌ MongoDB Atlas is NOT connected:", err.message);
-    process.exit(1); // exit the app if DB fails
+    console.error(" MongoDB Atlas is NOT connected:", err.message);
+    process.exit(1);
   }
 }
 
