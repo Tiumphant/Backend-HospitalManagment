@@ -24,7 +24,6 @@ app.use("/api", appointmentControl);
 
 app.use("/api", userRoutes);
 app.use("/api", patientControl);
-app.use("/upload", express.static("upload"));
 console.log("Loaded MONGO_URI:", process.env.MONGO_URI);
 connectDB().then(() => {
   const port = process.env.PORT || 8080;

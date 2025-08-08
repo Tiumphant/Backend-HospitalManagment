@@ -25,7 +25,7 @@
 //     type: String,
 //     required: true
 //   },
-  
+
 //   assignedDoctor: {
 //     type: mongoose.Schema.Types.ObjectId,
 //     ref: "Role"
@@ -38,7 +38,6 @@
 // const patient = mongoose.model("Patient", patientSchema);
 // module.exports = patient;
 const mongoose = require("mongoose");
-
 const patientSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, unique: true },
@@ -47,9 +46,7 @@ const patientSchema = new mongoose.Schema({
   gender: { type: String, required: true },
   address: { type: String, required: true },
   assignedDoctor: { type: mongoose.Schema.Types.ObjectId, ref: "Role" },
-  image: {type:String}
 });
 
-const Patient = mongoose.model("Patient", patientSchema);
-module.exports = Patient;
-
+const patient = mongoose.model("Patient", patientSchema);
+module.exports = patient;
